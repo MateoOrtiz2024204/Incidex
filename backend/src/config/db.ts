@@ -8,6 +8,7 @@ export const pool = new Pool({
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'dbgestionincidencias_in5cm',
   max: 10,
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
 });
 
 export const probarConexion = async () => {
